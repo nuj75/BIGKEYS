@@ -12,8 +12,11 @@ N-Gram Language Model: BIG KEYS employs an N-gram language model to analyze prev
 
 NLTK Database: The program leverages the NLTK database to access a rich source of linguistic data, improving the accuracy and diversity of predictions.
 
+![one](rmimages/one.png)
+![two](rmimages/two.png)
+![three](rmimages/three.png)
+![four](rmimages/four.png)
 
-## How to Use
 ### Installation:
 
 1. Ensure you have Python installed on your system.
