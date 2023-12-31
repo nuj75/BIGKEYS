@@ -1,10 +1,10 @@
-#BIG KEYS - N-Gram Text Editor
-##Overview
+# BIG KEYS - N-Gram Text Editor
+## Overview
 BIG KEYS developed using Flask and implements an n-gram language model to enhance your typing experience!
 The program uses the NLTK (Natural Language Toolkit) database along with the text you type into the text editor to increase its prediction abilities. 
 BIG KEYS gets more powerful the more you use it-- as the program learns how you type, it gets better an better at completing your sentences. 
 
-##How It's Made
+## How It's Made
 BIG KEYS is developed using the Flask web framework, incorporating the TinyMCE library for the editor interface and the SweetAlert library for notifications. Text data is stored and retrieve with the use of the Pickle library.
 
 ##Features
