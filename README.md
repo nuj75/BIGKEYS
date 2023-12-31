@@ -7,13 +7,13 @@ BIG KEYS gets more powerful the more you use it-- as the program learns how you 
 ## How It's Made
 BIG KEYS is developed using the Flask web framework, incorporating the TinyMCE library for the editor interface and the SweetAlert library for notifications. Text data is stored and retrieve with the use of the Pickle library.
 
-##Features
+## Features
 N-Gram Language Model: BIG KEYS employs an N-gram language model to analyze previous text and predict how to complete the sentence.
 
 NLTK Database: The program leverages the NLTK database to access a rich source of linguistic data, improving the accuracy and diversity of predictions.
 
 
-##How to Use
+## How to Use
 Installation:
 
 Ensure you have Python installed on your system.
@@ -29,22 +29,22 @@ bash
 Copy code
 python big_keys.py
 
-##Typing with Predictive Text:
+## Typing with Predictive Text:
 
 To complete your sentence, select the personal or general sentence completion buttons in the header of the text editor. Using data that you have put into the text editor, or data from the NLTK database, BIG KEYS will complete your sentence. 
 
-##Dependencies
+## Dependencies
 Python
 Flask
 TinyMCE
 SweetAlert
 Pickle
 
-##Contributing
+## Contributing
 If you'd like to contribute to BIG KEYS, feel free to fork the repository, make your changes, and submit a pull request. We welcome contributions to improve the functionality and performance of the program.
 
-##License
+## License
 This project is licensed under the MIT License, which means you are free to use, modify, and distribute the software. See the LICENSE file for more details.
 
-##Acknowledgments
+## Acknowledgments
 BIG KEYS acknowledges the contributions of the NLTK project and the open-source community for providing valuable linguistic data and tools.
