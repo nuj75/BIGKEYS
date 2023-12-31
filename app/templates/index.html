@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <title>BIG KEYS</title>
+    <link rel="icon" href="https://pngimg.com/uploads/letter_a/letter_a_PNG23.png">
+
+
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/sweetalert2.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/0kopppykp7z5323rrfdf0qi29y2jph9nvd8ampvbicsfqkko/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+
+<script>
+    
+
+tinymce.PluginManager.add('swalert', function(text, editor) {
+    
+    const customIcon = '<img src="/static/writingIcon.png" alt="Custom Icon" style="width: 50px; height: 50px;">';
+
+    
+        const mySwal = Swal.mixin ({
+                title: "GENERATED TEXT",
+                html: "<div class='swal-text'>" + text + "</div>",
+                iconHtml: customIcon,
+                showCancelButton: true,
+                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Add Text',
+                background: "rgb(37,47,61)",
+                customClass: {
+                    popup: 'custom-popup-class',
+                    confirmButton: 'custom-confirm-button-class',
+                    cancelButton: 'custom-cancel-button-class',
+                },
+                
+            });
+        
+        const confirmSwal = Swal.mixin ({
+            title: "ADDING TEXT...",
+            icon: "success",
+            background: "rgb(37,47,61)",
+            customClass: {
+                    confirmButton: 'custom-confirm-button-class'
+            },
+        });
+            
+        mySwal.fire().then((result) => {
+                if (result.isConfirmed) {
+                    confirmSwal.fire().then(() => {editor.insertContent(text)});
+
+                    
+                } else {
+                    
+                }
+                });
+                
+    
+
+
+
+});
+
+
+function send_name(inst) {
+    $.ajax({
+        url: "/names",
+        type: 'POST',
+        dataType: "json",
+        data: JSON.stringify(inst.getBody().innerHTML),
+        headers: {'Content-Type': 'application/json', 'charset': 'utf-8'}
+    })
+    
+}
+
+
+
+
+function generate(method, words) {
+
+    var result="";
+
+    $.ajax({
+        url: "/handle_data",
+        type: 'POST',
+        dataType: "json",
+        data: JSON.stringify([method,words]),
+        async: false,
+        headers: {'Content-Type': 'application/json', 'charset': 'utf-8'},
+        success: function(data) {
+            result = data;
+        }
+    });
+
+    return result;
+
+    
+
+}
+
+
+tinymce.init({
+  selector: '.wysiwyg',
+  menubar: 'custom',
+  menu: {
+    custom: { title: 'GENERATOR', items: 'completeSentence generateSentence ' }
+  },
+  skin: 'oxide-dark',
+  content_css: 'dark',
+  resize: false,
+  setup: function (editor) {
+    editor.on("change", function () {
+            send_name(editor);
+    });
+
+    var toggleState = false;
+
+    editor.ui.registry.addMenuItem('generateSentence', {
+      text: 'Generate Sentence',
+      onAction: function () {
+        const text = generate("Submit1", editor.getBody().innerHTML);
+
+        if (text != "") {
+            tinymce.PluginManager.items[1](text, editor);
+        }
+        
+
+        
+      }
+    });
+
+    editor.ui.registry.addNestedMenuItem('completeSentence', {
+      text: 'Complete Sentence',
+      getSubmenuItems: function () {
+        return [
+          {
+            type: 'menuitem',
+            text: 'Most Common Completion',
+            onAction: function () {
+                const text = generate("Submit", editor.getBody().innerHTML);
+                if (text != "") {
+                    tinymce.PluginManager.items[1](text, editor);
+                }
+                
+            }
+          },
+
+          {
+            type: 'menuitem',
+            text: 'Standard Completion',
+            onAction: function () {
+                const text = generate("Submit2", editor.getBody().innerHTML);
+                if (text != "") {
+                    tinymce.PluginManager.items[1](text, editor);
+                }
+            }
+          }
+        ];
+      }
+    });
+
+
+  },
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+  
+});
+
+
+
+
+
+
+  </script>
+
+<body>
+
+
+    <section class="header">
+      <h1>BIG KEYS</h1>
+    </section>
+
+
+    <div class = "textbox">
+        <form method="post" action = "{{ url_for('handle_data') }}">
+            <textarea class="wysiwyg" id = "inputarea" name = "inputarea" onchange="send_name(document.getElementById('inputarea').value)">{{text_data | safe}}</textarea>
+        </form>
+    </div>
+
+</body>
+</html>

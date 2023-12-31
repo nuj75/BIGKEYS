@@ -1,0 +1,140 @@
+
+body {
+    /* background-color: rgb(172, 172, 172); */
+    background-color: rgb(51, 55, 60);
+}
+.header {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-position: bottom;
+    background-size: cover;
+    font-family: 'Instrument Serif', serif;
+}
+
+.header h1 {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    top: 2%;
+    transform: translate(-50%, -75%);
+    margin-left: auto;
+    color: white;
+    /* color: rgb(86, 121, 103); */
+    font-weight: 600;
+    font-size: 75px;
+    letter-spacing: -4px;
+    text-align: center;
+    line-height: 1.1;
+}
+
+nav {
+    display: flex;
+    align-content: center;
+}
+
+
+.nav-links{
+    text-align: right;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    position: fixed;
+    z-index:100;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-53%);
+
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 40px 0px;
+}
+
+.nav-links ul li a{
+    
+    text-decoration: none;
+    
+    color: black;
+
+}
+
+.textbox {
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wysiwyg {
+   background: black;
+   color: white;
+   border: none;
+   border-radius: 10px;
+    overflow: auto;
+    outline: none;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+    
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    
+}
+
+
+
+
+.swal2-popup .swal2-title {
+    display: block;
+    text-align: center;
+    font-family: 'Instrument Serif', serif;
+    color: white;
+    font-size: 40px;
+}
+
+.swal2-popup .swal-text {
+    background-color: #2e2e2e;
+    padding: 10px;
+    border: 1px solid #70694b;
+    display: block;
+    margin: 4px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    color: white;
+
+
+}
+
+
+.swal2-popup .custom-confirm-button-class {
+    background-color: rgb(181, 181, 181) !important; 
+    color: #000000 !important;
+
+}
+
+.swal2-popup .custom-confirm-button-class:focus{
+    outline: 3px solid rgb(68, 68, 68)!important;
+  }
+
+
+.swal2-popup .custom-popup-class {
+    background-color: rgb(37,47,61); /* Replace with your RGB values */
+}
+
+  
