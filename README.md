@@ -14,31 +14,34 @@ NLTK Database: The program leverages the NLTK database to access a rich source o
 
 
 ## How to Use
-Installation:
+### Installation:
 
-Ensure you have Python installed on your system.
+1. Ensure you have Python installed on your system.
 Install the necessary dependencies by running:
-bash
-Copy code
+
+```bash
 pip install flask tinyMCE sweetalert pickle
-Run the Program:
+```
 
-Clone the BIG KEYS repository to your local machine.
+2. Run the Program:
+
+3. Clone the BIG KEYS repository to your local machine.
 Navigate to the project directory and run the following command:
-bash
-Copy code
-python big_keys.py
 
-## Typing with Predictive Text:
+```bash
+python big_keys.py
+```
+
+### Typing with Predictive Text:
 
 To complete your sentence, select the personal or general sentence completion buttons in the header of the text editor. Using data that you have put into the text editor, or data from the NLTK database, BIG KEYS will complete your sentence. 
 
 ## Dependencies
-Python
-Flask
-TinyMCE
-SweetAlert
-Pickle
+- Python
+- Flask
+- TinyMCE
+- SweetAlert
+- Pickle
 
 ## Contributing
 If you'd like to contribute to BIG KEYS, feel free to fork the repository, make your changes, and submit a pull request. We welcome contributions to improve the functionality and performance of the program.
