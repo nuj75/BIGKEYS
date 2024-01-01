@@ -17,23 +17,7 @@ NLTK Database: The program leverages the NLTK database to access a rich source o
 ![three](rmimages/three.png)
 ![four](rmimages/four.png)
 
-### Installation:
 
-1. Ensure you have Python installed on your system.
-- Install the necessary dependencies by running:
-
-```bash
-pip install flask tinyMCE sweetalert pickle
-```
-
-2. Run the Program:
-
-- Clone the BIG KEYS repository to your local machine.
-- Navigate to the project directory and run the following command:
-
-```bash
-python big_keys.py
-```
 
 ### Typing with Predictive Text:
 
