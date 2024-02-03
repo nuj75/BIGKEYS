@@ -33,8 +33,5 @@ To complete your sentence, select the personal or general sentence completion bu
 ## Contributing
 If you'd like to contribute to BIG KEYS, feel free to fork the repository, make your changes, and submit a pull request. We welcome contributions to improve the functionality and performance of the program.
 
-## License
-This project is licensed under the MIT License, which means you are free to use, modify, and distribute the software. See the LICENSE file for more details.
-
 ## Acknowledgments
 BIG KEYS acknowledges the contributions of the NLTK project and the open-source community for providing valuable linguistic data and tools.
